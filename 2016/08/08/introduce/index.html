@@ -1,0 +1,821 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="引导页,教程," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前言介绍一下，我写博客的原因吧。真没想到，我也会突然想写文章。当然我想做博客也不是偶然，我从最近看的某教学视频某讲师那了解到了 markdown  这种神奇的标记语言； 同时被灌输了写一个自己的博客，有着种种好处（这里我就不灌鸡汤了）。但想搭建一个免费的个人博客又很不容易，从视频的讲师那我又了解到了 gitpages ,在看了几篇网上教程后成功搭建起我的博客(文章最后附上参考的教程)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零搭建个人博客">
+<meta property="og:url" content="http://yoursite.com/2016/08/08/introduce/index.html">
+<meta property="og:site_name" content="从放弃到重拾">
+<meta property="og:description" content="前言介绍一下，我写博客的原因吧。真没想到，我也会突然想写文章。当然我想做博客也不是偶然，我从最近看的某教学视频某讲师那了解到了 markdown  这种神奇的标记语言； 同时被灌输了写一个自己的博客，有着种种好处（这里我就不灌鸡汤了）。但想搭建一个免费的个人博客又很不容易，从视频的讲师那我又了解到了 gitpages ,在看了几篇网上教程后成功搭建起我的博客(文章最后附上参考的教程)。">
+<meta property="og:image" content="http://yoursite.com/images/introduce/2.1.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/2.2.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/3.1.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/3.3.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/3.4.1.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/3.4.2.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/4.1.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/4.1.1.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/4.2.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/4.2.1.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/5.0.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/5.0.1.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/5.2.png">
+<meta property="og:image" content="http://yoursite.com/images/introduce/5.4.png">
+<meta property="og:updated_time" content="2016-08-14T08:10:49.930Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从零搭建个人博客">
+<meta name="twitter:description" content="前言介绍一下，我写博客的原因吧。真没想到，我也会突然想写文章。当然我想做博客也不是偶然，我从最近看的某教学视频某讲师那了解到了 markdown  这种神奇的标记语言； 同时被灌输了写一个自己的博客，有着种种好处（这里我就不灌鸡汤了）。但想搭建一个免费的个人博客又很不容易，从视频的讲师那我又了解到了 gitpages ,在看了几篇网上教程后成功搭建起我的博客(文章最后附上参考的教程)。">
+<meta name="twitter:image" content="http://yoursite.com/images/introduce/2.1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/08/introduce/"/>
+
+  <title> 从零搭建个人博客 | 从放弃到重拾 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?283c3be8ec334dd4eacef70650b9de54";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">从放弃到重拾</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                从零搭建个人博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-08T14:40:20+08:00" content="2016-08-08">
+              2016-08-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/引导页/" itemprop="url" rel="index">
+                    <span itemprop="name">引导页</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/08/introduce/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/08/introduce/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/08/introduce/" class="leancloud_visitors" data-flag-title="从零搭建个人博客">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>介绍一下，我写博客的原因吧。真没想到，我也会突然想写文章。当然我想做博客也不是偶然，我从最近看的某教学视频某讲师那了解到了 <a href="http://baike.baidu.com/item/markdown" target="_blank" rel="external">markdown</a>  这种神奇的标记语言； 同时被灌输了写一个自己的博客，有着种种好处（这里我就不灌鸡汤了）。但想搭建一个免费的个人博客又很不容易，从视频的讲师那我又了解到了 <a href="https://pages.github.com/" target="_blank" rel="external">gitpages</a> ,在看了几篇网上教程后成功搭建起我的博客(文章最后附上参考的教程)。</p>
+<a id="more"></a>
+<h1 id="1-搭建前的准备-我以windows环境为例"><a href="#1-搭建前的准备-我以windows环境为例" class="headerlink" title="1. 搭建前的准备(我以windows环境为例)"></a>1. 搭建前的准备(我以windows环境为例)</h1><ul>
+<li>注册一个 <a href="https://github.com/" target="_blank" rel="external">github</a> 账号</li>
+<li>安装 <a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a> </li>
+<li>安装 <a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a></li>
+<li>均按默认安装即可</li>
+</ul>
+<h1 id="2-配置你的-github"><a href="#2-配置你的-github" class="headerlink" title="2. 配置你的 github"></a>2. 配置你的 <a href="https://github.com/" target="_blank" rel="external">github</a></h1><h2 id="2-1-新建一个仓库-Repository"><a href="#2-1-新建一个仓库-Repository" class="headerlink" title="2.1 新建一个仓库(Repository)"></a>2.1 新建一个仓库(Repository)</h2><p><img src="/images/introduce/2.1.png" width="200" height="200" alt="图片名称" align="center"></p>
+<h2 id="2-2-仓库的名称-格式是-name-github-io-这里的name一定要和你的github账号名称相同，-如我的账号名称是-zzkshare"><a href="#2-2-仓库的名称-格式是-name-github-io-这里的name一定要和你的github账号名称相同，-如我的账号名称是-zzkshare" class="headerlink" title="2.2 仓库的名称 格式是 name.github.io (这里的name一定要和你的github账号名称相同， 如我的账号名称是 zzkshare)"></a>2.2 仓库的名称 格式是 <em>name</em>.github.io (这里的name<strong>一定</strong>要和你的github账号名称<strong>相同</strong>， 如我的账号名称是 <em>zzkshare</em>)</h2><p><img src="/images/introduce/2.2.png" width="200" height="200" alt="图片名称" align="center"></p>
+<h1 id="3-让本地与github-链接"><a href="#3-让本地与github-链接" class="headerlink" title="3. 让本地与github 链接"></a>3. 让本地与github 链接</h1><h2 id="3-1-打开刚刚安装的git里的-git-bash-开始菜单或直接搜索就能找到"><a href="#3-1-打开刚刚安装的git里的-git-bash-开始菜单或直接搜索就能找到" class="headerlink" title="3.1 打开刚刚安装的git里的 git bash (开始菜单或直接搜索就能找到)"></a>3.1 打开刚刚安装的git里的 git bash (开始菜单或直接搜索就能找到)</h2><p><img src="/images/introduce/3.1.png" width="200" height="200" alt="图片名称" align="center"></p>
+<h2 id="3-2-在窗口中输入以下命令配置-ssh-C是大写-邮箱任意-可以填自己的邮箱"><a href="#3-2-在窗口中输入以下命令配置-ssh-C是大写-邮箱任意-可以填自己的邮箱" class="headerlink" title="3.2 在窗口中输入以下命令配置 ssh ( C是大写 邮箱任意 可以填自己的邮箱)"></a>3.2 在窗口中输入以下命令配置 ssh ( <strong>C</strong>是大写 邮箱任意 可以填自己的邮箱)</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"邮箱@123.com"</span>     //(这里$ 命令框里已经有了)</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/c/Users/admin0/.ssh/id_rsa):此处继续按回车</div><div class="line">//接下来提示让你输入密码（输入不显示屏幕上， 可以设空）</div></pre></td></tr></table></figure>
+<p>Enter passphrase (empty for no passphrase):<br>Enter same passphrase again:</p>
+<h2 id="3-3-完成密码输入后如果成了就会出现下图"><a href="#3-3-完成密码输入后如果成了就会出现下图" class="headerlink" title="3.3 完成密码输入后如果成了就会出现下图"></a>3.3 完成密码输入后如果成了就会出现下图</h2><p><img src="/images/introduce/3.3.png" width="200" height="200" alt="图片名称" align="center"><br>根据红圈的路径找到对应的文件（如果没找到，把显示隐藏文件打开）<br>用记事本打开复制所以内容</p>
+<h2 id="3-4-登陆-github-进入账户设置"><a href="#3-4-登陆-github-进入账户设置" class="headerlink" title="3.4 登陆 github 进入账户设置"></a>3.4 登陆 github 进入账户设置</h2><p><img src="/images/introduce/3.4.1.png" width="200" height="200" alt="图片名称" align="center"><br><img src="/images/introduce/3.4.2.png" width="200" height="200" alt="图片名称" align="center"><br>把刚才复制的文字放到key中 点击addkey</p>
+<h2 id="3-5-以上本地就与github链接上了"><a href="#3-5-以上本地就与github链接上了" class="headerlink" title="3.5 以上本地就与github链接上了"></a>3.5 以上本地就与github链接上了</h2><p>输入以下命令<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">如果出现</div><div class="line">The authenticity of host <span class="string">'github.com '</span> can<span class="string">'t be established.</span></div><div class="line">RSA key fingerprint is c6:eb:d1:31:ad:c0:25:1d:ee:94:7c:dc:6c:b9:4d:d2.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div><div class="line">输入yes</div><div class="line">然后就会有</div><div class="line">Hi zzkshare! You've successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure></p>
+<p>说明设置成功了</p>
+<h2 id="3-6-接下来还要做一点配置，设置一些个人信息-引号内填你的真实信息"><a href="#3-6-接下来还要做一点配置，设置一些个人信息-引号内填你的真实信息" class="headerlink" title="3.6 接下来还要做一点配置，设置一些个人信息(引号内填你的真实信息)"></a>3.6 接下来还要做一点配置，设置一些个人信息(引号内填你的真实信息)</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"你的名字"</span></div><div class="line">$ git config --global user.email  <span class="string">"你的邮箱"</span></div></pre></td></tr></table></figure>
+<h1 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4. 安装Hexo"></a>4. 安装Hexo</h1><p>第三步我们已经成功配置好了github， 接下来我们需要安装一个博客模板，方便使用</p>
+<h2 id="4-1-首先先在这行下面这个命令"><a href="#4-1-首先先在这行下面这个命令" class="headerlink" title="4.1 首先先在这行下面这个命令"></a>4.1 首先先在这行下面这个命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g hexo</div></pre></td></tr></table></figure>
+<h2 id="4-2-然后在电脑新建一个名为-Hexo-的文件夹（我建在G盘下）-右键选择Git-Bash-Here"><a href="#4-2-然后在电脑新建一个名为-Hexo-的文件夹（我建在G盘下）-右键选择Git-Bash-Here" class="headerlink" title="4.2 然后在电脑新建一个名为 Hexo 的文件夹（我建在G盘下）, 右键选择Git Bash Here"></a>4.2 然后在电脑新建一个名为 <em>Hexo</em> 的文件夹（我建在G盘下）, 右键选择Git Bash Here</h2><p><img src="/images/introduce/4.1.png" width="200" height="200" alt="图片名称" align="center"><br>输入命令 hexo init 等一段代码跑完后会显示 INFO  Start blogging with Hexo!<br><img src="/images/introduce/4.1.1.png" width="200" height="200" alt="图片名称" align="center"></p>
+<h2 id="4-3-此时就完成了-hexo-的安装，输入下面的命令，我们来看一下博客的效果"><a href="#4-3-此时就完成了-hexo-的安装，输入下面的命令，我们来看一下博客的效果" class="headerlink" title="4.3 此时就完成了 hexo 的安装，输入下面的命令，我们来看一下博客的效果"></a>4.3 此时就完成了 hexo 的安装，输入下面的命令，我们来看一下博客的效果</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<p>出现下图后 在浏览器输入 localhost:4000 就能看到效果<br><img src="/images/introduce/4.2.png" width="200" height="200" alt="图片名称" align="center"><br><img src="/images/introduce/4.2.1.png" width="200" height="200" alt="图片名称" align="center"></p>
+<p>如果上面的步骤都没有任何问题那么恭喜你 一个简单的博客在本地的搭建就已经基本完成了，当然还没有结束 我们还要做个性化配置和写文章呢。</p>
+<h1 id="5-配置-hexo-主题"><a href="#5-配置-hexo-主题" class="headerlink" title="5. 配置 hexo 主题"></a>5. 配置 hexo 主题</h1><p>配置主题部分因人而异，这里提供一个主题网址可以从这里寻找你喜欢的主题</p>
+<ul>
+<li><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">主题：https://github.com/hexojs/hexo/wiki/Themes</a><br>这里我用的是 nexT 主题<br><img src="/images/introduce/5.0.png" width="200" height="200" alt="图片名称" align="center"><br>点击 demo 可以看到主题的样式 点击 红圈的名字可以获得主题的地址<br><img src="/images/introduce/5.0.1.png" width="200" height="200" alt="图片名称" align="center"></li>
+</ul>
+<h2 id="5-1-克隆主题"><a href="#5-1-克隆主题" class="headerlink" title="5.1 克隆主题"></a>5.1 克隆主题</h2><p>如果刚才的 gitbash 还在预览模式是可以按 Ctrl+C 停止服务 然后输入下面的命令(主题地址是刚才你所选择的主题的地址这里我用的是nexT的地址)<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ git clone https://github.com/iissnan/hexo-theme-next</div></pre></td></tr></table></figure></p>
+<h2 id="5-2-更改配置文件"><a href="#5-2-更改配置文件" class="headerlink" title="5.2 更改配置文件"></a>5.2 更改配置文件</h2><p>打开Hexo文件夹 用记事本(建议用sublime)打开 _config.yml 文件 在最后几行找到 theme 属性把它 landscape改成 你的主题名称（在Hexo/theme 目录下有）<br><img src="/images/introduce/5.2.png" width="200" height="200" alt="图片名称" align="center"><br>注意： theme 和 你的主题名称前直接有一个空格 不能丢</p>
+<h2 id="5-3-再次调试"><a href="#5-3-再次调试" class="headerlink" title="5.3 再次调试"></a>5.3 再次调试</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ hexo s -g</div></pre></td></tr></table></figure>
+<p>以上命令等同于<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure></p>
+<p>如果看到主题的效果了 就说明主题配置成功了</p>
+<h2 id="5-4-上传博客"><a href="#5-4-上传博客" class="headerlink" title="5.4 上传博客"></a>5.4 上传博客</h2><p>当调试后觉的没问题了就可以上传到github了<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ hexo d -g</div></pre></td></tr></table></figure></p>
+<p>等待完成后<br>可以去浏览器输入地址 <a href="https://你的用户名.github.io" target="_blank" rel="external">https://你的用户名.github.io</a> (这里https:// 不能少，不然打不开)<br><img src="/images/introduce/5.4.png" width="200" height="200" alt="图片名称" align="center"></p>
+<h2 id="5-5"><a href="#5-5" class="headerlink" title="5.5"></a>5.5</h2><p>如果以上配置完成了，博客算是真正搭建完成了，还有一些主题的细节可以参考各自的主题说明文档（一般 github 里能找到）</p>
+<h1 id="6-开始写博客"><a href="#6-开始写博客" class="headerlink" title="6 开始写博客"></a>6 开始写博客</h1><ul>
+<li>先对 Hexo 文件夹 选择 gitbash 然后 输入 hexo n “你的文件名”</li>
+<li>文章的位置在 Hexo\source_posts 目录中</li>
+<li>用支持 markdown 语法的编辑器（如 MarkdownPad， sublime）去编辑</li>
+<li>用 $ hexo s -g 调试</li>
+<li>调试完成用 $ hexo d -g 上传</li>
+</ul>
+<h1 id="7-由于不善写作，所以文章写的有点简略速成-大部分都参考一些教程-下面是本文参考资料"><a href="#7-由于不善写作，所以文章写的有点简略速成-大部分都参考一些教程-下面是本文参考资料" class="headerlink" title="7 由于不善写作，所以文章写的有点简略速成 大部分都参考一些教程 下面是本文参考资料"></a>7 由于不善写作，所以文章写的有点简略速成 大部分都参考一些教程 下面是本文参考资料</h1><p>-<a href="http://www.jianshu.com/p/05289a4bc8b2/" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程: http://www.jianshu.com/p/05289a4bc8b2/</a><br>-<a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">Hexo搭建Github静态博客: http://www.cnblogs.com/zhcncn/p/4097881.html</a><br>-<a href="https://pages.github.com/" target="_blank" rel="external">gitpage: https://pages.github.com/</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/引导页/" rel="tag">#引导页</a>
+          
+            <a href="/tags/教程/" rel="tag">#教程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/07/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/08/introduce/"
+           data-title="从零搭建个人博客" data-url="http://yoursite.com/2016/08/08/introduce/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avtar.png"
+               alt="No regret" />
+          <p class="site-author-name" itemprop="name">No regret</p>
+          <p class="site-description motion-element" itemprop="description">从入门到放弃,从放弃到重拾. we wil never regret!</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-搭建前的准备-我以windows环境为例"><span class="nav-number">2.</span> <span class="nav-text">1. 搭建前的准备(我以windows环境为例)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-配置你的-github"><span class="nav-number">3.</span> <span class="nav-text">2. 配置你的 github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-新建一个仓库-Repository"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 新建一个仓库(Repository)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-仓库的名称-格式是-name-github-io-这里的name一定要和你的github账号名称相同，-如我的账号名称是-zzkshare"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 仓库的名称 格式是 name.github.io (这里的name一定要和你的github账号名称相同， 如我的账号名称是 zzkshare)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-让本地与github-链接"><span class="nav-number">4.</span> <span class="nav-text">3. 让本地与github 链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-打开刚刚安装的git里的-git-bash-开始菜单或直接搜索就能找到"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 打开刚刚安装的git里的 git bash (开始菜单或直接搜索就能找到)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-在窗口中输入以下命令配置-ssh-C是大写-邮箱任意-可以填自己的邮箱"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 在窗口中输入以下命令配置 ssh ( C是大写 邮箱任意 可以填自己的邮箱)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-完成密码输入后如果成了就会出现下图"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 完成密码输入后如果成了就会出现下图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-登陆-github-进入账户设置"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 登陆 github 进入账户设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-以上本地就与github链接上了"><span class="nav-number">4.5.</span> <span class="nav-text">3.5 以上本地就与github链接上了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-接下来还要做一点配置，设置一些个人信息-引号内填你的真实信息"><span class="nav-number">4.6.</span> <span class="nav-text">3.6 接下来还要做一点配置，设置一些个人信息(引号内填你的真实信息)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-安装Hexo"><span class="nav-number">5.</span> <span class="nav-text">4. 安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-首先先在这行下面这个命令"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 首先先在这行下面这个命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-然后在电脑新建一个名为-Hexo-的文件夹（我建在G盘下）-右键选择Git-Bash-Here"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 然后在电脑新建一个名为 Hexo 的文件夹（我建在G盘下）, 右键选择Git Bash Here</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-此时就完成了-hexo-的安装，输入下面的命令，我们来看一下博客的效果"><span class="nav-number">5.3.</span> <span class="nav-text">4.3 此时就完成了 hexo 的安装，输入下面的命令，我们来看一下博客的效果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-配置-hexo-主题"><span class="nav-number">6.</span> <span class="nav-text">5. 配置 hexo 主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-克隆主题"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 克隆主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-更改配置文件"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 更改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-再次调试"><span class="nav-number">6.3.</span> <span class="nav-text">5.3 再次调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-上传博客"><span class="nav-number">6.4.</span> <span class="nav-text">5.4 上传博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5"><span class="nav-number">6.5.</span> <span class="nav-text">5.5</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-开始写博客"><span class="nav-number">7.</span> <span class="nav-text">6 开始写博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-由于不善写作，所以文章写的有点简略速成-大部分都参考一些教程-下面是本文参考资料"><span class="nav-number">8.</span> <span class="nav-text">7 由于不善写作，所以文章写的有点简略速成 大部分都参考一些教程 下面是本文参考资料</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">No regret</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zzkshare"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("BtJy6OWhGsmLFIGbN0m3evbI-gzGzoHsz", "rcJRfNmVYLHuQb3v0ppoYXn9");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
